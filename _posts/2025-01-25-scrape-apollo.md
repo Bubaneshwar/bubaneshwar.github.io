@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to scrape apollo.io in under 5 minutes
-url: scrape-apollo
+permalink: /:title
 ---
 # Cold Emails: Cheap and Effective When Done Right  
 
