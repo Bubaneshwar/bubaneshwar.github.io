@@ -644,3 +644,109 @@ button {
   }
 }
  /* ERROR 404 PAGE */ 
+
+ /* WATER GLASS */
+  /* WATER GLASS */
+   /* WATER GLASS */
+    /* WATER GLASS */
+     /* WATER GLASS */
+     .glass {
+      position: relative; 
+      width: 200px; /* Set to the same width as the water glass */
+      height: 300px; /* Extra height to allow space for the droplet to fall */
+    }
+    
+    .water {
+      position: absolute;
+      bottom: 0; /* Align the glass (water container) to the bottom of the container */
+      width: 100%;
+      height: 250px; /* Increased water height for higher level */
+      background-color: #80c5de;
+      box-shadow: inset 0 0 50px #1c637c;
+      clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+      overflow: hidden; /* Ensures the ripple stays inside the glass */
+    }
+    
+    .water::before {
+      content: "";
+      position: absolute;
+      bottom: 0; /* Ripple at the water level */
+      left: 50%;
+      width: 0;
+      height: 0;
+      background-color: rgba(255, 255, 255, 0.6); /* Light ripple effect */
+      border-radius: 50%;
+      transform: translateX(-50%) translateY(100%); /* Center and place */
+      animation: ripple 2s ease-out infinite; /* Infinite ripple match with droplet */
+      pointer-events: none; /* Ignore mouse interaction */
+    }
+    
+    @keyframes ripple {
+      0% {
+        width: 0;
+        height: 0;
+        opacity: 0.6;
+      }
+      70% {
+        width: 80px;
+        height: 80px; /* Expansion of ripple */
+        opacity: 0.3;
+      }
+      100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0; /* Disappear after expanding */
+      }
+    }
+    
+    .water::after {
+      content: "";
+      width: 200%;
+      height: 200%;
+      background-color: #ececec;
+      position: absolute;
+      top: -150%;
+      left: -50%;
+      border-radius: 40%;
+      animation: anim 12s linear infinite;
+    }
+    
+    .droplet {
+      position: absolute;
+      top: -50px; /* Droplet starts above the glass */
+      left: calc(50% - 5px); /* Center aligned above water */
+      width: 10px;
+      height: 20px;
+      background-color: #80c5de;
+      border-radius: 50%;
+      animation: fall 2s infinite ease-in;
+    }
+    
+    @keyframes fall {
+      0% {
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+      }
+      80% {
+        transform: translateY(200px) scale(1); /* Approaching water */
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(250px) scale(1); /* Merge with water */
+        opacity: 0;
+      }
+    }
+    
+    @keyframes anim {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+  /* WATER GLASS */
+   /* WATER GLASS */
+    /* WATER GLASS */
+     /* WATER GLASS */
